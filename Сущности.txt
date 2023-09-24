@@ -2,16 +2,16 @@
 (OTM O_Role, M_User)
 User:
   + Id : int
-  + EmailAdress : varchar
-  + NumPassport : varchar
-  + Name : varchar
-  + Surname : varchar
+  + EmailAdress : varchar(20)
+  + NumPassport : varchar(20)
+  + Name : varchar(20)
+  + Surname : varchar(20)
 
 =====================================
 
 (OTM O_Role, M_User)
 Role:
-  + Name: varchar
+  + Name: varchar(20)
   + Code: number(*,0)
 
 =====================================
@@ -34,36 +34,36 @@ Dates:
 (OTM O_RitualUrn, M_Order)
 RitualUrn:
   + Id : int 
-  + Name : varchar 
+  + Name : varchar(20)
   + Price : number(*,2) 
-  + ImagePath : varchar
+  + ImagePath : varchar(80)
 
 =====================================
 
 (OTO O_Corpose, O_Order)
 Corpose:
   + Id : int
-  + NumPassport : varchar 
-  + Name : varchar 
-  + Surname : varchar
+  + NumPassport : char(14)
+  + Name : varchar(20) 
+  + Surname : varchar(20)
 
 =====================================
 
 (OTM O_Coffin, M_Order)
 Сoffin:
   + Id : int 
-  + Name : varchar 
+  + Name : varchar(20)
   + Price : number(*,2) 
-  + ImagePath : varchar
+  + ImagePath : varchar(80)
 
 =====================================
 
 (MTM M_Ceremony, M_Order)
 Ceremony:
   + Id : int
-  + Contact : varchar 
-  + NameOfCompany : varchar
-  + Description : varchar
+  + Contact : varchar(20)
+  + NameOfCompany : varchar(20)
+  + Description : varchar(120)
 
 =====================================
 
@@ -82,5 +82,5 @@ Order:
 
 (OTM O_StateOrder, M_Order)
 StateOrder:
-  + Name: varchar
-  + Code: number(*,0)
+  + Name: varchar(20)
+  + Code: int
