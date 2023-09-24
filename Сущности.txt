@@ -1,7 +1,7 @@
 (OTM O_User, M_Order)
 (OTM O_Role, M_User)
 User:
-  + Id : number(*,0)
+  + Id : int
   + EmailAdress : varchar
   + NumPassport : varchar
   + Name : varchar
@@ -19,8 +19,8 @@ Role:
 (OTM O_Hall, M_Order)
 (OTM O_Hall, M_Dates)
 Hall:
-  + Id : number(*,0) 
-  + Capacity : number(*,0) 
+  + Id : int 
+  + Capacity : int
   + Price : number(*,2) 
 
 =====================================
@@ -33,7 +33,7 @@ Dates:
 
 (OTM O_RitualUrn, M_Order)
 RitualUrn:
-  + Id : number(*,0) 
+  + Id : int 
   + Name : varchar 
   + Price : number(*,2) 
   + ImagePath : varchar
@@ -42,7 +42,7 @@ RitualUrn:
 
 (OTO O_Corpose, O_Order)
 Corpose:
-  + Id : number(*,0)
+  + Id : int
   + NumPassport : varchar 
   + Name : varchar 
   + Surname : varchar
@@ -51,7 +51,7 @@ Corpose:
 
 (OTM O_Coffin, M_Order)
 Сoffin:
-  + Id : number(*,0) 
+  + Id : int 
   + Name : varchar 
   + Price : number(*,2) 
   + ImagePath : varchar
@@ -60,7 +60,7 @@ Corpose:
 
 (MTM M_Ceremony, M_Order)
 Ceremony:
-  + Id : number(*,0)
+  + Id : int
   + Contact : varchar 
   + NameOfCompany : varchar
   + Description : varchar
@@ -75,7 +75,7 @@ Ceremony:
 (MTM M_Ceremony, M_Order)
 (OTM O_StateOrder, M_Order)
 Order:
-  + Id : number(*,0)
+  + Id : int
   + DateOfActual : date
 
 =====================================
