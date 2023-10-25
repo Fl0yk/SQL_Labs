@@ -16,7 +16,9 @@ INSERT INTO RitualUrn (Name, Price, ImagePath) VALUES
 
 INSERT INTO Corpose (Name, Surname, NumPassport) VALUES
 ("Drowned", "Corpose", "12222222222222"),
-("Suicidal", "Corpose", "13333333333333");
+("Suicidal", "Corpose", "13333333333333"),
+("Suicidal2", "Corpose", "43333333333333"),
+("Suicidal3", "Corpose", "53333333333333");
 
 INSERT INTO Hall (Capacity, Price) VALUES
 (120, ROUND(160.99, 2)),
@@ -46,8 +48,8 @@ INSERT INTO StateOrder (Name) VALUES
 ("Cancelled");
 
 INSERT INTO Oerders (DateOfActual, HallId, CorposeId, CoffinId, UserId, UrnId, StateCode) VALUES
-(date('now'), 1, 1, 1, 1, 1, 1),
-(date('2023-10-17'), 2, 2, 2, 2, 2, 1);
+(date('now'), 1, 3, 1, 2, 1, 1),
+(date('2023-10-17'), 2, 4, 2, 1, 2, 1);
 
 INSERT INTO OrderCeremony (OrderId, CeremonyId) VALUES
 (1, 1),
