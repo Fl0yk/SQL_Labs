@@ -24,7 +24,7 @@ SELECT u.Id AS UserId, u.Name, u.Surname, u.EmailAdress, u.NumPassport,
             (SELECT r.Name FROM Role AS r WHERE r.Code=u.RoleCode)
         ELSE 'Нет роли'
     END AS UserRole
-FROM User AS u;
+FROM Users AS u;
 
 --Аналогичное получение пользователя с ролями через LEFT OUTER JOIN--
 SELECT u.Id AS UserId, u.Name, u.Surname, u.EmailAdress, u.NumPassport,
@@ -38,7 +38,7 @@ LEFT OUTER JOIN Role AS r ON u.ROleCode=r.Code;
 --Получение пользователей и количества заказов каждого--
 CREATE VIEW NumberOfOrders AS
 SELECT u.Id AS UserId, u.Name, u.Surname, COUNT(o.Id) AS NumberOfOrders
-FROM User AS u 
+FROM Users AS u 
 LEFT JOIN Orders AS o ON u.Id=o.UserId
 GROUP BY u.Id;
 
