@@ -1,6 +1,6 @@
 --Объединение всей информации об заказе--
 CREATE VIEW FullOrders AS
-SELECT o.Id, 
+SELECT o.Id, o.DateOfActual, o.StateCode
 cor.Name AS CorposeName, cor.Surname AS CorposeSurname, cor.NumPassport AS CoproseNumPassport,
 h.Id AS HallNumber, h.Capacity AS HallCapacity, h.Price AS HallPrice,
 urn.Name AS UrnName, urn.Price AS UrnPrice,
@@ -15,6 +15,21 @@ LEFT JOIN Coffin AS cof ON cof.Id=o.CoffinId
 LEFT JOIN UserWithRole AS u ON u.UserId=o.UserId
 LEFT JOIN OrderCeremony AS oc ON oc.OrderId=o.Id
 LEFT JOIN Ceremony AS c ON oc.CeremonyId=c.Id;
+
+
+CREATE VIEW ShortOrders AS
+SELECT o.Id, o.DateOfActual, o.StateCode,
+cor.Name AS CorposeName, cor.Surname AS CorposeSurname,
+h.Id AS HallNumber,
+urn.Name AS UrnName,
+cof.Name AS CoffinName,
+u.UserId AS UserId, u.Name, u.Surname, u.NumPassport
+FROM Orders AS o
+LEFT JOIN Corpose AS cor ON cor.Id=o.CorposeId
+LEFT JOIN Hall AS h ON h.Id=o.HallId
+LEFT JOIN RitualUrn AS urn ON urn.Id=o.UrnId
+LEFT JOIN Coffin AS cof ON cof.Id=o.CoffinId
+LEFT JOIN UserWithRole AS u ON u.UserId=o.UserId;
 
 --Получение пользователя с ролью текстом--
 CREATE VIEW UserWithRole AS
